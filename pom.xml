@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>maven-parent_son</artifactId>
+
+    <!--父子工程中父工程的打包方式必须用pom-->
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <!--声明包含的子模块-->
+    <modules>
+        <module>ssm_entity</module>
+        <module>ssm_mapper</module>
+        <module>ssm_service</module>
+        <module>ssm_web</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+    <!--dependencyManagement只声明使用的依赖，并没有真正导入，
+        主要作用是确立使用的依赖包的版本号
+        子模块需要使用的依赖在配置时无需再配置版本号
+    -->
+    <dependencyManagement>
+        <dependencies>
+            <!--基础注解依赖包（@Data，@NoArgsConstructor等）-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.24</version>
+            </dependency>
+
+            <!--JSON格式字符串依赖包-->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.11.2</version>
+            </dependency>
+
+            <!--mapper层除了以上还需要用到的依赖包-->
+            <!--spring支持jdbc的依赖包-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>5.2.10.RELEASE</version>
+            </dependency>
+            <!--mybatis基础包-->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>3.5.4</version>
+            </dependency>
+            <!--mybatis与spring整合包-->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>2.0.4</version>
+            </dependency>
+            <!--连接mysql依赖包-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.22</version>
+            </dependency>
+            <!--德鲁伊数据源依赖包-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>1.2.14</version>
+            </dependency>
+
+            <!--service除了以上还需要的依赖包-->
+            <!--spring的context需要的依赖包（@service，@controller等需要的依赖包）-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>5.2.10.RELEASE</version>
+            </dependency>
+            <!--@Resource注解需要的依赖包-->
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>javax.annotation-api</artifactId>
+                <version>1.3.2</version>
+            </dependency>
+
+            <!--controller层除了上面还需要的依赖包-->
+            <!--@ResponseBody,@PostMapping等需要的依赖包-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>5.2.10.RELEASE</version>
+            </dependency>
+            <!--连接servlet服务需要的依赖包-->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>4.0.1</version>
+            </dependency>
+
+
+
+            <!--项目本身的依赖-->
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>ssm_entity</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>ssm_mapper</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>ssm_service</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

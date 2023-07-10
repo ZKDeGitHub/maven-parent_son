@@ -1,0 +1,6 @@
+# 项目排除路径
+/out/
+/ssm_entity/target/
+/ssm_mapper/target/
+/ssm_service/target/
+/ssm_web/target/
