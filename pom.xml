@@ -19,9 +19,12 @@
         <module>ssm_web</module>
     </modules>
 
+    <!--提前声明了一个变量 表示版本号的值 后续直接使用 ${变量名}去使用这个值 -->
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <spring.version>5.2.10.RELEASE</spring.version>
+        <lombok.version>1.18.22</lombok.version>
+        <jackson.version>2.11.2</jackson.version>
+        <ssm.version>1.0-SNAPSHOT</ssm.version>
     </properties>
 
     <!--dependencyManagement只声明使用的依赖，并没有真正导入，
@@ -34,7 +37,7 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.24</version>
+                <version>${lombok.version}</version>
             </dependency>
 
             <!--JSON格式字符串依赖包-->
@@ -110,17 +113,17 @@
             <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>ssm_entity</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${ssm.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>ssm_mapper</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${ssm.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>ssm_service</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${ssm.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -21,6 +21,7 @@ public class UserController {
     @Resource
     private UserService userService;
 
+    //@RequestBody会将接受的json字符串转化为对象类型
     @PostMapping("add")
     public String addUser(@RequestBody User user) {
         System.out.println("user: " + user);

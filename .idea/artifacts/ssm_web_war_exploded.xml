@@ -23,7 +23,7 @@
           <element id="archive" name="ssm_entity-1.0-SNAPSHOT.jar">
             <element id="module-output" name="ssm_entity" />
           </element>
-          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.24" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.22" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.11.2" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.11.2" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.11.2" />
