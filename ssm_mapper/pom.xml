@@ -17,6 +17,7 @@
     </properties>
 
     <dependencies>
+        <!--相当于导入对entity层的依赖-->
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>ssm_entity</artifactId>
